@@ -1,7 +1,10 @@
-import { greetUser } from '$utils/greet';
+import { skipToMainContent } from "$digerati/skipToMainContent";
+import { headingUnderlines } from "$digerati/headingUnderlines";
 
-window.Webflow ||= [];
+window.Webflow || [];
 window.Webflow.push(() => {
-  const name = 'John Doe';
-  greetUser(name);
+  /* Prevent FOUT */
+  document.body.classList.add('webflow-loaded');
+  skipToMainContent();
+  headingUnderlines();
 });
